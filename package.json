@@ -99,5 +99,11 @@
   "devDependencies": {
     "less": "^3.8.1",
     "less-loader": "^4.1.0"
-  }
+  },
+  "proxy":{
+    "/*":{
+       "target":"http://192.168.1.108:8808",
+       "changeOrigin": true
+     }
+   }
 }

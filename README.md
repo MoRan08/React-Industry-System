@@ -77,3 +77,45 @@
   ],
 },
   ```
+
+## 设置代理 ##
+
+```
+// package.json 文件
+ "proxy":{
+    "/*":{
+       "target":"http://192.168.1.108:8808",
+       "changeOrigin": true
+     }
+   }
+```
+
+## 模块热替换(HMR)  
+
+在React 的入口文件 src/index.js中，添加一些配置代码。 
+
+```
+if (module.hot) {
+  module.hot.accept();
+}
+```
+
+## 配置简化路径
+
+ 修改 webpack.config.dev 与 webpack.config.prod 两个文件 加入相同配置
+
+```
+//简化路径配置
+const __dirname = '';
+function resolve(dir) {
+  return path.join(__dirname, '..', dir)
+}
+
+// 修改
+alias: {
+      'react-native': 'react-native-web',
+      '@': resolve('src')
+}
+
+```
+
