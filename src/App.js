@@ -1,15 +1,20 @@
 import React, { Component } from 'react';
-import { Button } from 'antd';
+import SiderCustom from './components/Home/SiderCustom';
+import HeaderCustom from './components/Home/HeaderCustom';
 import './App.css';
+
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-          <Button type="primary">Button</Button>
-       </div>
+      <div>
+          <HeaderCustom/>
+          <SiderCustom />
+      </div>
+     
     );
   }
 }
+
 
 export default App;
