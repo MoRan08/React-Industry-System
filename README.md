@@ -20,9 +20,10 @@
 
 ## 配置less ##
 
-1.npm run eject
-2.npm install less-loader less --save-dev
-3.修改 webpack.config.dev.js 和 webpack.config-prod.js 配置文件
+1. npm run eject
+2. npm install less-loader less --save-dev
+3. 修改 webpack.config.dev.js 和 webpack.config-prod.js 配置文件
+
   ```
   test: /\.css$/ 改为 /\.(css|less)$/, 修改后如下：
 
