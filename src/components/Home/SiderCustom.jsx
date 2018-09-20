@@ -2,6 +2,7 @@ import React,{ Component } from 'react';
 import { Layout, Menu, Icon } from 'antd';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import logo from '../../style/imgs/logo.png';
 
 import '../../mock/menu';
 
@@ -16,6 +17,14 @@ class SiderCustom extends Component {
           selectedKey: '',
           menuData:[]
       };
+
+      onCollapse = (collapsed) => {
+        console.log(collapsed);
+        this.setState({
+            collapsed,
+            mode: collapsed ? 'vertical' : 'inline',
+        });
+    };
       
       openMenu = v => {
           this.setState({
@@ -48,7 +57,10 @@ class SiderCustom extends Component {
                 collapsed={this.props.collapsed}
                 style={{overflowY: 'auto'}}
             >
-                <div className="logo" />
+                <div className="logo">
+                  管理系统
+                    {/* <img src={logo} alt="Logo" /> */}
+                </div>
                 <Menu
                     onClick={this.menuClick}
                     theme="dark"
